@@ -6,14 +6,14 @@
               <input @keyup.enter="search" type="text" v-model="missionWord" placeholder="미션 단어">
               <button @click="search">검색</button>
             </div>
-            <p v-if="!sec">단어를 검색해주세요!</p>
+            <p v-if="!sec">단어를 검색해주세요</p>
             <p v-else>{{ sec }}초 소요됨</p>
             <div class="outputs">
               <LoadingItem v-if="isLoading"/>
               <ul v-else>
                 <li class="out" v-for="(d, idx) in state.word" :key="idx">
                   <h3>{{ d }}</h3>
-                  <span>단어 길이: {{ d.length-1 }}  |  미션 단어 갯수: {{ state.count[idx] }}</span>
+                  <span>단어 길이: {{ d.length-1 }}  |  미션 단어 개수: {{ state.count[idx] }}</span>
                 </li>
               </ul>
             </div>
